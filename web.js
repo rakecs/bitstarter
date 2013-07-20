@@ -6,7 +6,7 @@ app.get('/', function(request, response) {
 var fs = require('fs');
 fs.readFileSync('index.html' , function (err, data) {
   if (err) throw err;
-response.send(data);  
+response.send(data.toString('ascii'));  
 }); 
 
 // response.send('Hello World!rakesh');
