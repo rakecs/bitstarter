@@ -4,10 +4,9 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-fs.readFileSync('index.html' , function (err, data) {
-  if (err) throw err;
-response.send(data.toString('ascii'));  
-}); 
+var data =fs.readFileSync('index.html' ,'utf8');
+  
+response.send(data.toString());  
 
 // response.send('Hello World!rakesh');
 });
